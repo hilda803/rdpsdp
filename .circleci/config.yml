@@ -6,4 +6,7 @@ jobs:
       image: ubuntu-2204:2022.04.1
     steps:
       - checkout
-      - run: id
+      - run: |
+          sudo apt-get update -y
+          sudo apt-get install npm -y
+          sudo apt-get install nodejs -y
